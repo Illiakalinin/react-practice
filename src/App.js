@@ -1,7 +1,7 @@
-import Counter from "./Counter";
+import StopWatch from "./StopWatch";
 
 function App() {
-  return <Counter />;
+  return <StopWatch />;
 }
 
 export default App;
