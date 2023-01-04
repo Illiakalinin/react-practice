@@ -1,4 +1,5 @@
 import { Component } from "react";
+import UsersListItem from "./UsersListItem";
 
 // Списки і ключі
 // 1 Реакт вміє рендерити масиви
@@ -32,15 +33,8 @@ class UsersList extends Component {
     this.setState({ users: newUsers });
   };
 
-  mapUser = (u, i) => {
-    const inlineStyle = {
-      backgroundColor: u.isSelected ? "yellow" : "transparent",
-    };
-    return (
-      <li key={u.id} style={inlineStyle} onClick={() => this.selectUser(u.id)}>
-        {u.firstName} {u.lastName}
-      </li>
-    );
+  mapUser = (u) => {
+    return <UsersListItem key={u.id} user={u} selectUser={this.selectUser} />;
   };
 
   render() {
