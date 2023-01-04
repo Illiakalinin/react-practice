@@ -34,7 +34,15 @@ class UsersList extends Component {
   };
 
   mapUser = (u) => {
-    return <UsersListItem key={u.id} user={u} selectUser={this.selectUser} />;
+    const { isLight } = this.props;
+    return (
+      <UsersListItem
+        key={u.id}
+        user={u}
+        selectUser={this.selectUser}
+        isLight={isLight}
+      />
+    );
   };
 
   render() {

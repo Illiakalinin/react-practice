@@ -1,11 +1,16 @@
 function UsersListItem(props) {
   const {
     selectUser,
+    isLight,
     user: { id, isSelected, firstName, lastName },
   } = props;
 
   const inlineStyle = {
-    backgroundColor: isSelected ? "yellow" : "transparent",
+    backgroundColor: isSelected
+      ? isLight
+        ? "yellow"
+        : "violet"
+      : "transparent",
   };
 
   return (
