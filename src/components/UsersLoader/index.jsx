@@ -60,7 +60,7 @@ class UsersLoader extends Component {
             <button onClick={this.nextPage}>{">"}</button>
             <ul>
               {users.map((u) => (
-                <li key={u.id}>{JSON.stringify(u)}</li>
+                <li key={u.login.uuid}>{JSON.stringify(u)}</li>
               ))}
             </ul>
           </>
