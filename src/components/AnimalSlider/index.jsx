@@ -1,6 +1,6 @@
 import { Component } from "react";
 import defaultImg from "./defaultImg.jpg";
-import styles from "./AnimalSlider.module.css";
+import styles from "./AnimalSlider.module.sass";
 
 class AnimalSlider extends Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class AnimalSlider extends Component {
   }
 
   componentDidUpdate() {
-    this.id = setTimeout(this.loadImg, 2000);
+    this.id = setTimeout(this.loadImg, 3000);
   }
 
   componentWillUnmount() {
