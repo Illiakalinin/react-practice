@@ -1,8 +1,12 @@
 import React from "react";
-import StopWatchH from "./components/StopWatchH";
+import UsersLoaderH from "./components/UsersLoaderH";
 
 function App() {
-  return <StopWatchH />;
+  return (
+    <>
+      <UsersLoaderH />;
+    </>
+  );
 }
 
 export default App;

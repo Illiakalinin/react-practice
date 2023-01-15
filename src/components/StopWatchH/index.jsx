@@ -34,7 +34,6 @@ function StopWatchH() {
     <article>
       <div>{count.toLocaleTimeString("en-GB")}</div>
       <button onClick={start}>{isRunning ? "Stop" : "Start"}</button>
-      {/* <button onClick={stop}>Stop</button> */}
       <button onClick={reset}>Reset</button>
     </article>
   );
