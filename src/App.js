@@ -1,25 +1,100 @@
-import React, { createContext, useContext, useState } from "react";
-
-const ThemeContext = createContext();
+import { useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Link,
+  Route,
+  Switch,
+  useHistory,
+  useRouteMatch,
+} from "react-router-dom";
+import Counter from "./components/Counter";
+import StopWatch from "./components/StopWatch";
 
 function App() {
-  const [theme, setTheme] = useState("light");
-
   return (
-    <ThemeContext.Provider value={theme}>
-      <Child />
-    </ThemeContext.Provider>
+    <Router>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/components">Components</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/contacts">Contacts</Link>
+          </li>
+        </ul>
+      </nav>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/components">
+          <Components />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/contacts">
+          <Contacts />
+        </Route>
+        <Route path="*">
+          <NotFound />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
 export default App;
 
-function Child() {
-  return <ChildChild />;
+function Home() {
+  return <div>Home</div>;
 }
 
-function ChildChild() {
-  const theme = useContext(ThemeContext);
+function Components() {
+  const { path, url } = useRouteMatch();
 
-  return <div>{theme}</div>;
+  return (
+    <div>
+      <ol>
+        <li>
+          <Link to={`${url}/counter`}>Counter</Link>
+        </li>
+        <li>
+          <Link to={`${url}/stopwatch`}>StopWatch</Link>
+        </li>
+      </ol>
+      <Switch>
+        <Route path={`${path}/counter`}>
+          <Counter />
+        </Route>
+        <Route path={`${url}/stopwatch`}>
+          <StopWatch />
+        </Route>
+      </Switch>
+    </div>
+  );
+}
+
+function About() {
+  return <div>About</div>;
+}
+
+function Contacts() {
+  return <div>Contacts</div>;
+}
+
+function NotFound() {
+  const history = useHistory();
+
+  useEffect(() => {
+    setTimeout(() => history.push("/"), 5000);
+  });
+
+  return <div>404 Not Found</div>;
 }
