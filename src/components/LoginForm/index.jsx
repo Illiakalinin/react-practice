@@ -1,8 +1,12 @@
-import React, { Component } from "react";
-import classNames from "classnames";
-import styles from "./LoginForm.module.css";
+import React, { Component } from 'react';
+import classNames from 'classnames';
+import styles from './LoginForm.module.css';
+// state -> input
+// state <- input
+//        ^
+//     onChange
 
-const INITIAL_VALUES = { email: "", password: "" };
+const INITIAL_VALUES = { email: '', password: '' };
 
 const LOGIN_FORM_REX_EXP = {
   email: /^.+@.+$/,
@@ -27,6 +31,7 @@ class LoginForm extends Component {
       isEmailValid: LOGIN_FORM_REX_EXP.email.test(value),
     });
   };
+
   handlePasswordChange = ({ target: { value } }) => {
     this.setState({
       password: value,
@@ -34,7 +39,7 @@ class LoginForm extends Component {
     });
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
     // send request
     this.setState(INITIAL_VALUES);
@@ -53,7 +58,6 @@ class LoginForm extends Component {
       [styles.inputInvalid]: !isPasswordValid,
     });
 
-    console.log("isEmailValid", isEmailValid);
     return (
       <div className={styles.formContainer}>
         <h1 className={styles.formHeader}>LoginForm</h1>
@@ -76,7 +80,6 @@ class LoginForm extends Component {
               className={passwordClassName}
               type="password"
               name="password"
-              placeholder="yourPassword"
               value={password}
               onChange={this.handlePasswordChange}
             />

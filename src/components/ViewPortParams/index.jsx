@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from 'react';
 
 class ViewPortParams extends Component {
   constructor(props) {
@@ -15,11 +15,11 @@ class ViewPortParams extends Component {
   };
 
   componentDidMount() {
-    window.addEventListener("resize", this.resizeHandler);
+    window.addEventListener('resize', this.resizeHandler);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.resizeHandler);
+    window.removeEventListener('resize', this.resizeHandler);
   }
 
   render() {

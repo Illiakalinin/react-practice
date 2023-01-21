@@ -1,11 +1,11 @@
-import PropTypes from "prop-types";
-import styles from "./ImageWrapper.module.sass";
+import PropTypes from 'prop-types';
+import styles from './ImageWrapper.module.sass';
 
 // проброс пропсов
 function ImageWrapper({ width, height, children, ...restProps }) {
   const wrapperDims = {
-    width, // width: width,
-    height, // height: height,
+    width, // width: width
+    height, // height: height
   };
 
   return (
@@ -16,8 +16,8 @@ function ImageWrapper({ width, height, children, ...restProps }) {
 }
 
 ImageWrapper.defaultProps = {
-  width: "300px",
-  height: "200px",
+  width: '300px',
+  height: '200px',
 };
 
 ImageWrapper.propTypes = {

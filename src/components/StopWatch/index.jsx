@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { Component } from 'react';
 
 class StopWatch extends Component {
   constructor(props) {
@@ -15,16 +15,18 @@ class StopWatch extends Component {
   }
   componentDidUpdate() {}
   componentWillUnmount() {
-    this.stop(0);
+    this.stop();
   }
 
   tick = () => {
     const { count } = this.state;
-    // не змінювати стан напряму!!! стан іммутабельний!!!
+    // не змінювари стан напряму!!! стан іммутабельний!!!
     const newCount = new Date(count.valueOf());
+    console.log('tick');
     newCount.setSeconds(count.getSeconds() + 1);
     this.setState({ count: newCount });
   };
+
   start = () => {
     if (!this.id) {
       this.id = setInterval(this.tick, 1000);
@@ -45,7 +47,7 @@ class StopWatch extends Component {
 
     return (
       <article>
-        <div>{count.toLocaleTimeString("en-GB")}</div>
+        <div>{count.toLocaleTimeString('en-GB')}</div>
         <button onClick={this.start}>Start</button>
         <button onClick={this.stop}>Stop</button>
         <button onClick={this.reset}>Reset</button>

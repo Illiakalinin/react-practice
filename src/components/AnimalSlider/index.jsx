@@ -1,6 +1,6 @@
-import { Component } from "react";
-import defaultImg from "./defaultImg.jpg";
-import styles from "./AnimalSlider.module.sass";
+import { Component } from 'react';
+import defaultImg from './defaultImg.jpg';
+import styles from './AnimalSlider.module.sass';
 
 class AnimalSlider extends Component {
   constructor(props) {
@@ -8,18 +8,19 @@ class AnimalSlider extends Component {
 
     this.state = {
       imgSrc: defaultImg,
-      caption: "This is some dog)",
+      caption: 'This is some dog)',
     };
     this.id = null;
   }
 
-  //прописати завантаження зображення в componentDidMount
+  // прописати завантаження зображення в componentDidMount
 
   loadImg = () => {
-    fetch("https://dog.ceo/api/breeds/image/random")
-      .then((response) => response.json())
-      .then((data) => this.setState({ imgSrc: data.message }))
-      .catch((err) => console.log(err));
+    console.log('load');
+    fetch('https://dog.ceo/api/breeds/image/random')
+      .then(response => response.json())
+      .then(data => this.setState({ imgSrc: data.message }))
+      .catch(err => console.log(err));
   };
 
   componentDidMount() {
@@ -28,7 +29,7 @@ class AnimalSlider extends Component {
   }
 
   componentDidUpdate() {
-    this.id = setTimeout(this.loadImg, 3000);
+    this.id = setTimeout(this.loadImg, 2000);
   }
 
   componentWillUnmount() {

@@ -8,9 +8,9 @@ function UsersListItem(props) {
   const inlineStyle = {
     backgroundColor: isSelected
       ? isLight
-        ? "yellow"
-        : "violet"
-      : "transparent",
+        ? 'yellow'
+        : 'violet'
+      : 'transparent',
   };
 
   return (

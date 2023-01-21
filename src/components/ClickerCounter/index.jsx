@@ -1,37 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
 function ClickerCounter() {
-  const [clickCount, setclickCount] = useState(0);
+  const [clickCount, setClickCount] = useState(0);
 
   useEffect(() => {
-    // після кожного рендера
+    // після кожного рендеру = componentDidMount + componentDidUpdate
     document.title = clickCount;
   }, [clickCount]);
 
   const handleClick = () => {
-    setclickCount((clickCount) => clickCount + 1);
+    setClickCount(clickCount => clickCount + 1);
   };
 
   useEffect(() => {
-    document.body.addEventListener("click", handleClick);
+    document.body.addEventListener('click', handleClick);
 
-    //скидання ефекту
+    // скидання ефекту
     return () => {
-      document.body.removeEventListener("click", handleClick);
+      document.body.removeEventListener('click', handleClick);
     };
   }, []);
-
-  // useEffect(() => {
-  //   const handleClick = () => {
-  //     setclickCount((clickCount) => clickCount + 1);
-  //   };
-
-  //   document.body.addEventListener("click", handleClick);
-
-  //   return () => {
-  //     document.body.removeEventListener("click", handleClick);
-  //   };
-  // }, [(document.title = clickCount)]);
 
   return <div>{clickCount}</div>;
 }
@@ -54,3 +42,17 @@ export default ClickerCounter;
 // - Ефекти зі скиданням:
 //   - навішування/відписка від обробників подій
 //   - таймаути/інтервали
+
+// -------------------------------------------------------------------------------------
+// handleClick = () => {this.setState({clickCount:this.state.clickCount+1})}
+
+// componentDidMount() {
+//   document.body.addEventListener('click', handleClick )
+//   document.title = this.state.clickCount
+// }
+
+// componentDidUpdate() {
+//   document.title = this.state.clickCount
+// }
+
+// componentWillUnmount() { document.body.removeEventListener('click', handleClick )}
