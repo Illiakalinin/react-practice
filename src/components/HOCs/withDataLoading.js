@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-function withDataLoading(WrappedComponent) {
-  function WrappedComponentWithDataLoading({ url, ...props }) {
+function withDataLoading (WrappedComponent) {
+  function WrappedComponentWithDataLoading ({ url, ...props }) {
     const [data, setData] = useState([]);
     const [isFetching, setIsFetching] = useState(false);
     const [error, setError] = useState(null);
@@ -9,9 +9,9 @@ function withDataLoading(WrappedComponent) {
     useEffect(() => {
       setIsFetching(true);
       fetch(url)
-        .then((response) => response.json())
-        .then((data) => setData(data))
-        .catch((e) => setError(e))
+        .then(response => response.json())
+        .then(data => setData(data))
+        .catch(e => setError(e))
         .finally(() => setIsFetching(false));
     }, [url]);
 

@@ -1,4 +1,4 @@
-function UsersListItem(props) {
+function UsersListItem (props) {
   const {
     selectUser,
     isLight,

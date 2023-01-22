@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function ClickerCounter() {
+function ClickerCounter () {
   const [clickCount, setClickCount] = useState(0);
 
   useEffect(() => {

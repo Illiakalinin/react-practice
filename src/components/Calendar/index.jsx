@@ -16,7 +16,7 @@ import {
 const WEEK_DAYS = ['SANDAY', 'M...', 'T', 'W', 'T', 'F', 'S'];
 
 class Calendar extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -25,7 +25,7 @@ class Calendar extends Component {
     };
   }
 
-  render() {
+  render () {
     const { date, currentDate } = this.state;
 
     // поточне число

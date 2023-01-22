@@ -14,7 +14,7 @@ const LOGIN_FORM_REX_EXP = {
 };
 
 class LoginForm extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -45,7 +45,7 @@ class LoginForm extends Component {
     this.setState(INITIAL_VALUES);
   };
 
-  render() {
+  render () {
     const { email, password, isEmailValid, isPasswordValid } = this.state;
 
     const emailClassName = classNames(styles.input, {
@@ -66,9 +66,9 @@ class LoginForm extends Component {
             <span className={styles.inputName}>Email</span>
             <input
               className={emailClassName}
-              type="email"
-              name="email"
-              placeholder="your@mail"
+              type='email'
+              name='email'
+              placeholder='your@mail'
               value={email}
               onChange={this.handleEmailChange}
               autoFocus
@@ -78,13 +78,13 @@ class LoginForm extends Component {
             <span className={styles.inputName}>Password</span>
             <input
               className={passwordClassName}
-              type="password"
-              name="password"
+              type='password'
+              name='password'
               value={password}
               onChange={this.handlePasswordChange}
             />
           </label>
-          <button type="submit">Login</button>
+          <button type='submit'>Login</button>
         </form>
       </div>
     );

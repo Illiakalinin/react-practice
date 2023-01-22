@@ -1,14 +1,14 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import React from "react";
-import { USER_VALIDATION_SCHEMA } from "../../utils/validate/validationSchemas";
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import React from 'react';
+import { USER_VALIDATION_SCHEMA } from '../../utils/validate/validationSchemas';
 
 // Formik взяв на себе керуванням станом керованого компонента
 // + містить шаблонний код його обробників
-function UserInfoForm() {
-  const userInitialValues = { firstName: "" };
+function UserInfoForm () {
+  const userInitialValues = { firstName: '' };
 
   const handleSubmit = (values, formikBag) => {
-    console.log("values :>> ", values);
+    console.log('values :>> ', values);
     formikBag.resetForm();
   };
 
@@ -18,22 +18,22 @@ function UserInfoForm() {
       onSubmit={handleSubmit}
       validationSchema={USER_VALIDATION_SCHEMA}
     >
-      {(formikProps) => {
+      {formikProps => {
         return (
           <Form>
             <label>
               <span>Name:</span>
               <Field
-                type="text"
-                name="firstName"
-                placeholder="Name"
+                type='text'
+                name='firstName'
+                placeholder='Name'
                 autoFocus
               />
-              <ErrorMessage name="firstName" component="div" />
+              <ErrorMessage name='firstName' component='div' />
             </label>
 
-            <button type="submit">Save</button>
-            <button type="reset" disabled={!formikProps.dirty}>
+            <button type='submit'>Save</button>
+            <button type='reset' disabled={!formikProps.dirty}>
               Cancel
             </button>
           </Form>

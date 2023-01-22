@@ -2,7 +2,7 @@ import { Component } from 'react';
 import getUsers from '../../api';
 
 class UsersLoader extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -23,11 +23,11 @@ class UsersLoader extends Component {
       .finally(() => this.setState({ isFetching: false }));
   };
 
-  componentDidMount() {
+  componentDidMount () {
     this.loadUsers();
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate (prevProps, prevState) {
     const { currentPage } = this.state;
 
     if (currentPage !== prevState.currentPage) {
@@ -47,7 +47,7 @@ class UsersLoader extends Component {
     this.setState({ currentPage: currentPage + 1 });
   };
 
-  render() {
+  render () {
     const { users, isFetching, error } = this.state;
 
     return (

@@ -5,7 +5,7 @@ import CONSTANTS from '../../constants';
 
 const { LIGHT, DARK, PINK } = CONSTANTS.THEME;
 
-function Footer() {
+function Footer () {
   return (
     <ThemeContext.Consumer>
       {({ theme }) => {

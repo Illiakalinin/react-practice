@@ -1,6 +1,6 @@
-import { withDataLoading } from "../HOCs";
+import { withDataLoading } from '../HOCs';
 
-const PhonesLoadedList = (props) => {
+const PhonesLoadedList = props => {
   const { data: phones, isFetching, error } = props;
 
   return (
@@ -8,7 +8,7 @@ const PhonesLoadedList = (props) => {
       {isFetching && <div>Loading...</div>}
       {error && <div>ERROR</div>}
       <ol>
-        {phones.map((p) => (
+        {phones.map(p => (
           <li key={p.id}>
             {p.brand} {p.model}: {p.price}
           </li>

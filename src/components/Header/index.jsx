@@ -1,6 +1,6 @@
 import ThemeSwitcher from '../ThemeSwitcher/index';
 
-function Header() {
+function Header () {
   return (
     <header>
       <span>Header</span> <ThemeSwitcher />

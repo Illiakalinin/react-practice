@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from '../../components/Footer/index';
 import Header from '../../components/Header';
 
-function UserPage() {
+function UserPage () {
   return (
     <div>
       <Header />

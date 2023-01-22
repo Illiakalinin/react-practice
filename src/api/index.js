@@ -1,7 +1,7 @@
 import queryString from 'query-string';
 import CONFIGS from './../configs';
 
-function getUsers(options) {
+function getUsers (options) {
   const defaultOptions = {
     page: 1,
     results: CONFIGS.RESULTS_COUNT,

@@ -13,7 +13,7 @@ const usersData = [
 ];
 
 class UsersList extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -46,7 +46,7 @@ class UsersList extends Component {
     );
   };
 
-  render() {
+  render () {
     const { users } = this.state;
 
     return <ul>{users.map(this.mapUser)}</ul>;

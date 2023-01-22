@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-function FlexContainer(props) {
+function FlexContainer (props) {
   const { children, jc, ai, fd } = props;
 
   const flexContainerStyles = {

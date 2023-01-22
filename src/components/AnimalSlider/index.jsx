@@ -3,7 +3,7 @@ import defaultImg from './defaultImg.jpg';
 import styles from './AnimalSlider.module.sass';
 
 class AnimalSlider extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -23,26 +23,26 @@ class AnimalSlider extends Component {
       .catch(err => console.log(err));
   };
 
-  componentDidMount() {
+  componentDidMount () {
     // this.id = setInterval(this.loadImg, 2000);
     this.loadImg();
   }
 
-  componentDidUpdate() {
+  componentDidUpdate () {
     this.id = setTimeout(this.loadImg, 2000);
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     // clearInterval(this.id);
     clearTimeout(this.id);
   }
 
-  render() {
+  render () {
     const { imgSrc, caption } = this.state;
 
     return (
       <figure className={styles.sliderContainer}>
-        <img src={imgSrc} alt="dog" />
+        <img src={imgSrc} alt='dog' />
         <figcaption>{caption}</figcaption>
       </figure>
     );

@@ -3,7 +3,7 @@ import ThemeContext from '../../contexts/themeContext';
 
 const { LIGHT, DARK, PINK } = CONSTANTS.THEME;
 
-function ThemeSwitcher() {
+function ThemeSwitcher () {
   return (
     <ThemeContext.Consumer>
       {/* // 3 */}

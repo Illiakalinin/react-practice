@@ -1,7 +1,7 @@
 import { PureComponent } from 'react';
 
 class Counter extends PureComponent {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -38,7 +38,7 @@ class Counter extends PureComponent {
     this.setState({ count: count - step });
   };
 
-  render() {
+  render () {
     const { count } = this.state;
     console.log('count was rendered');
     return (

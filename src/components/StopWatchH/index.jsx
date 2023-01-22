@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function StopWatchH() {
+function StopWatchH () {
   const [count, setCount] = useState(new Date(0, 0, 0, 0, 0, 0, 0));
   const [isRunning, setIsRunning] = useState(true);
 

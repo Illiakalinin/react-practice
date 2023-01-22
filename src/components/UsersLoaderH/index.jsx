@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import getUsers from '../../api';
 
-function UsersLoaderH() {
+function UsersLoaderH () {
   const [users, setUsers] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
   const [error, setError] = useState(null);

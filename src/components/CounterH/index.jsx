@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function CounterH() {
+function CounterH () {
   // useState повертає масив з посиланням на стан і функцією для його зміни
   const [count, setCount] = useState(0);
   const [step, setStep] = useState(1);
@@ -25,7 +25,7 @@ function CounterH() {
       {count}
       <button onClick={decrement}>-</button>
       <button onClick={increment}>+</button>
-      <input type="number" value={step} onChange={handleStepChange} />
+      <input type='number' value={step} onChange={handleStepChange} />
     </div>
   );
 }

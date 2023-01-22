@@ -1,7 +1,7 @@
 import { Component } from 'react';
 
 class DataProvider extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -11,7 +11,7 @@ class DataProvider extends Component {
     };
   }
 
-  componentDidMount() {
+  componentDidMount () {
     const { fileName } = this.props;
 
     this.setState({ isFetching: true });
@@ -24,7 +24,7 @@ class DataProvider extends Component {
       });
   }
 
-  render() {
+  render () {
     const { children } = this.props;
     // як отримати що рендерити?
     return children(this.state);

@@ -1,8 +1,8 @@
-import classNames from "classnames";
-import { Field } from "formik";
-import React from "react";
+import classNames from 'classnames';
+import { Field } from 'formik';
+import React from 'react';
 
-function Input(props) {
+function Input (props) {
   const { name, label, classes, ...restProps } = props;
   return (
     <Field name={name}>
